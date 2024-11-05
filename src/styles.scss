@@ -1,6 +1,21 @@
-@import 'simple-keyboard/build/css/index.css';
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 html{
     font-family: "Figtree", sans-serif;
+    background-color: #dbd8cb;
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    color: #4C4347;
+    font-family: "Figtree", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: clamp(24px, 5vw, 28px);
+    text-align: center;
+}
+
+input:focus{
+    outline-width: 0;
 }
