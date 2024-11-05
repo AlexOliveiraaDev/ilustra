@@ -13,4 +13,18 @@ ul {
   
   .simple-keyboard {
     max-width: 850px;
+
+    
+  }
+
+.hg-standardBtn{
+
+  }
+
+  .hg-theme-default, .hg-button{
+    flex-grow: 0!important;
+  }
+
+  .hg-theme-default, .hg-button.hg-standardBtn{
+    width: 500px;
   }

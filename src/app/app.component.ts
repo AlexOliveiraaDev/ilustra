@@ -1,51 +1,31 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import Keyboard from "simple-keyboard";
+import { KeyboardComponent } from './components/keyboard/keyboard.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,KeyboardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent{
   title = 'ilustra';
   value = "";
-  keyboard?: Keyboard;
-
-ngAfterViewInit(): void {
-  this.keyboard = new Keyboard({
-    onChange: input => this.onChange(input),
-    onKeyPress: button => this.onKeyPress(button)
-})  
-}
-onKeyPress(button: string): any
-{
-  console.log("Button pressed", button);
-    /**
-     * If you want to handle the shift and caps lock buttons
-     */
-    if (button === "{shift}" || button === "{lock}") this.handleShift();
-}
-
-  onChange(input: string): any {
-
-    this.value = input;
-  console.log("Input changed", input);
+ 
+  inputKey(key:string){
+    console.log(key)
+    if (key != "{enter}" && key != "{backspace}"){
+      this.value +=key
+    }
+    else if (key == "{backspace}"){
+      this.value =this.value.slice(0,-1)
+    }
+    else{
+      console.log("Enter!")
+    }
     
   }
-
-  onInputChange = (event: any) => {
-    this.keyboard?.setInput(event.target.value);
-  };
-
-  handleShift = () => {
-    let currentLayout = this.keyboard?.options.layoutName;
-    let shiftToggle = currentLayout === "default" ? "shift" : "default";
-
-    this.keyboard?.setOptions({
-      layoutName: shiftToggle
-    });
-  };
+  
 }
