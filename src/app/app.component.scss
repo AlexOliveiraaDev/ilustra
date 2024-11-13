@@ -22,3 +22,45 @@
     max-width: 400px;
     margin: 20px;
   }
+
+  .image{
+    width: 200px;
+    img{
+      width: 100%;
+    }
+  }
+
+  .header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    img{
+      width: 100px;
+      height: 20px;
+    }
+    button{
+      background-color: transparent;
+      border: solid;
+      border-color: #3b3437;
+      border-radius: 5px;
+      border-width: 3px;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      font-size: 14px;
+      color: #3b3437;
+    }
+
+
+  }
+  .buttonsHeader{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }

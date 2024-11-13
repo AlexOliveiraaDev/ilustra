@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, ElementRef, Input, viewChild, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { KeyboardComponent } from './components/keyboard/keyboard.component';
-import { FormsModule } from '@angular/forms'; // Importe o FormsModule
+import { FormsModule } from '@angular/forms'; 
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import {heroCog8ToothSolid,heroChartBarSolid} from '@ng-icons/heroicons/solid'
 
 
 
@@ -9,9 +11,10 @@ import { FormsModule } from '@angular/forms'; // Importe o FormsModule
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,KeyboardComponent,FormsModule],
+  imports: [RouterOutlet,KeyboardComponent,FormsModule,NgIconComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  viewProviders: [provideIcons({heroCog8ToothSolid,heroChartBarSolid})]
 })
 export class AppComponent{
   @ViewChild("inputWord") inputWord!: ElementRef

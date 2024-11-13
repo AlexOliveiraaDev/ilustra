@@ -1,6 +1,14 @@
 <div class="main">
+	<div class="header">
+		<button><ng-icon name="heroChartBarSolid"></ng-icon></button>
+		<img src="./assets/logo.png" alt="">
+		<div class="buttonsHeader">
+			<button><ng-icon name="heroCog8ToothSolid"></ng-icon></button>
+			<button><ng-icon name="heroChartBarSolid"></ng-icon></button>
+		</div>
+	</div>
 	<div class="image">
-		<img src="./image.png">
+		<img src="./assets/image.png">
 	</div>
 	<div class="input"><input #inputWord [(ngModel)]="value" (focus)="onFocus($event)"/></div>
 	<div class="divKeyboard"><app-keyboard (inputKeyboard)="inputKey($event)"></app-keyboard></div>
