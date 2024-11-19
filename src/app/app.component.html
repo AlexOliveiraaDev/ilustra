@@ -7,9 +7,16 @@
 			<button><ng-icon name="heroChartBarSolid"></ng-icon></button>
 		</div>
 	</div>
-	<div class="image">
-		<img src="./assets/image.png">
+	<div class="tipsDiv">
+		<div #tip1 class="tips">1 PALAVRA</div>
+		<div #tip2 class="tips">2 PALAVRA</div>
+		<div #tip3 class="tips">3 PALAVRA</div>
+		<div #tip4 class="tips">4 PALAVRA</div>
+		<div #tip5 class="tips">5 PALAVRA</div>
 	</div>
-	<div class="input"><input #inputWord [(ngModel)]="value" (focus)="onFocus($event)"/></div>
+	<div class="image">
+		<img #image1 src="./assets/image.png" hidden>
+	</div>
+	<div class="input"><input #inputWord [(ngModel)]="value" (focus)="onFocus($event)" /></div>
 	<div class="divKeyboard"><app-keyboard (inputKeyboard)="inputKey($event)"></app-keyboard></div>
 </div>
