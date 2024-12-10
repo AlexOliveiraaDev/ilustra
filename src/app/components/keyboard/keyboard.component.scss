@@ -1,11 +1,12 @@
 
 $font-size: clamp(14px, 2vw, 20px);
 $icon-size: clamp(18px, 3vw, 40px);
-$key-height: clamp(30px, 4vw, 60px);
-$key-width: clamp(32px, 4vw, 60px);
+$key-height: clamp(30px, 5vw, 60px);
+$key-width: clamp(32px, 3vw, 60px);
 $key-background: #4c4347;
 $key-hover-background: #3b3437;
 $key-border-radius: 4px;
+
 
 .keyboard {
   display: flex;
@@ -77,3 +78,27 @@ ng-icon {
   max-width: 200px;
   height: $key-height;
 }
+
+@media (max-width: 768px) {
+  .keyboard {
+    transform: scale(1.2);
+  }
+}
+@media (max-width: 368px) {
+  .keyboard {
+    transform: scaleY(1.0);
+  }
+  .key{
+    height: 60px;
+    width: 35px;
+    font-size: 18px;
+  }
+  .enterKey{
+    width: 80px;
+  }
+  .spaceKey{
+    width: 100%;
+    max-width: 200px;
+  }
+}
+

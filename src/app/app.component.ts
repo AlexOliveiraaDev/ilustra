@@ -25,36 +25,53 @@ export class AppComponent {
   @ViewChild("tip5") tip5!: ElementRef
 
   @ViewChild("image1") image1!: ElementRef
+  @ViewChild("image2") image2!: ElementRef
+  @ViewChild("image3") image3!: ElementRef
+  @ViewChild("image4") image4!: ElementRef
+  @ViewChild("image5") image5!: ElementRef
 
   title = 'ilustra';
   value = "";
 
+  tips = [this.tip1, this.tip2, this.tip3, this.tip4, this.tip5]
+  images = [this.image1, this.image2, this.image3, this.image4, this.image5]
+
+  currentTip = 0;
+
   inputKey(key: string) {
     this.inputWord.nativeElement.focus()
-    if (key != "{enter}" && key != "{backspace}") {
-      this.value += key
-    }
-    else if (key == "{backspace}") {
-      this.value = this.value.slice(0, -1)
-    }
-    else {
-      if (this.value.toUpperCase() == "GELO") {
-        this.tip1.nativeElement.classList.add("correctTip")
-        this.image1.nativeElement.hidden = false
-        this.value = ""
-        console.log("Enter!")
-      }
-      if (this.value.toUpperCase() == "NEVE") {
-        this.tip2.nativeElement.classList.add("correctTip")
-        this.value = ""
-        console.log("Enter!")
-      }
+    if(key == "{enter}"){
+      this.validateInput(this.value)
+      return
     }
 
+    if(key == "{backspace}"){
+      this.value = this.value.slice(0, -1)
+      return
+    }
+
+    this.value += key
   }
+
+validateInput(input: string){
+  console.log(input)
+if (input.toUpperCase() == "GELO"){
+  this.tips[this.currentTip].nativeElement.classList.add("correctTip")
+  this.currentTip++
+  this.images[this.currentTip].nativeElement.hidden = false
+  this.value = ""
+  return
+}
+this.tips[this.currentTip].nativeElement.classList.add("incorrectTip")
+this.images[this.currentTip].nativeElement.hidden = false
+this.currentTip++
+
+
+}
 
   onFocus(event: FocusEvent) {
     event.preventDefault();
   }
 
 }
+
