@@ -1,64 +1,79 @@
-.keyboard {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
 
+$font-size: clamp(14px, 2vw, 20px);
+$icon-size: clamp(18px, 3vw, 40px);
+$key-height: clamp(30px, 4vw, 60px);
+$key-width: clamp(32px, 4vw, 60px);
+$key-background: #4c4347;
+$key-hover-background: #3b3437;
+$key-border-radius: 4px;
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: auto;
 }
 
 .keyboard-line {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap; /* Permite que as teclas quebrem de linha */
-    gap: 3px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 3px;
+  width: 100%;
+}
+
+.spacing {
+  width: 100%;
+  min-width: 5px;
+  max-width: 2vw;
 }
 
 .key {
-    width: 10vw; /* Ajusta as teclas com base na largura da viewport */
-    height: 10vw; /* Mantém as teclas quadradas */
-    max-width: 60px; /* Limite máximo para evitar teclas muito grandes */
-    max-height: 60px;
-    padding: 0; /* Remove o padding extra */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #4c4347;
-    border-radius: 8px;
-    font-weight: bold;
-    color: white;
-    font-size: clamp(12px, 5vw, 20px);
-    text-transform: uppercase;
-    box-sizing: border-box;
+  width: clamp(30px, 4vw, 60px);
+  height: $key-height;
+  font-size: $font-size;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $key-background;
+  border-radius: $key-border-radius;
+  font-weight: bold;
+  color: white;
 
-    transition: all ease 0.1s;
-    cursor: pointer;
+  text-transform: uppercase;
+  transition: all ease 0.1s;
+  cursor: pointer;
 }
 
-
-.key:hover{
-    transform: scale(1.05);
-    background-color:#3b3437 ;
+.key:hover {
+  transform: scale(1.05);
+  background-color: #3b3437;
 }
-.key:active{
-    transform: scale(0.95);
+
+.key:active {
+  transform: scale(0.95);
 }
 
 ng-icon {
-    font-size: clamp(24px, 5vw, 28px);
+  font-size: $icon-size;
 }
 
 .enterKey {
-    width: 20vw;
-    max-width: 120px; /* Limite máximo */
-    height: 10vw;
-    max-height: 60px;
+  width: clamp(30px, 80px, 140px);
+  max-width: 140px;
+  min-width: 32px;
+  height: $key-height;
+  margin-left: 5px;
+
 }
 
+.backspace {
+  margin-left: 5px;
 
+}
 .spaceKey {
-    width: 40vw;
-    max-width: 400px;
-    height: 10vw;
-    max-height: 60px;
+  width: 100%;
+  max-width: 200px;
+  height: $key-height;
 }

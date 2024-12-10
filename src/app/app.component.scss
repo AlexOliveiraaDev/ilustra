@@ -10,7 +10,7 @@ $color-correct: #3aa394;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 0 20px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -23,15 +23,16 @@ $color-correct: #3aa394;
   border-width: 3px;
   border-style: solid;
   border-radius: 10px;
-  width: 90%;
+  flex-grow: 1;
   max-width: 300px;
   height: 60px;
   overflow: hidden;
 }
 
 .divKeyboard {
-  max-width: 400px;
-  margin: 20px;
+  flex-grow: 1;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .image {
@@ -72,8 +73,10 @@ $color-correct: #3aa394;
     border-color: $color-text;
     border-radius: 5px;
     border-width: 3px;
-    width: 24px;
-    height: 24px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    width: auto;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,8 +84,6 @@ $color-correct: #3aa394;
     font-size: 14px;
     color: $color-text;
   }
-
-
 }
 
 .buttonsHeader {
@@ -105,16 +106,17 @@ $color-correct: #3aa394;
   border-radius: 5px;
   padding: 10px;
   font-weight: bold;
-  font-size: 12px;
+  font-size: clamp(1rem, 1.5vw, 1rem);
   color: $color-white;
+  flex-grow: 1;
 }
 
 .correctTip {
   background-color: $color-correct;
 }
 
-// Media Queries
-@media screen and (max-width: 768px) {
+// Mmakup
+@media screen and (max-width: 0.768px) {
   .image {
     width: 95%;
     max-width: 350px;
@@ -141,7 +143,7 @@ $color-correct: #3aa394;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 0.480px) {
   .image {
     max-width: 280px;
   }
