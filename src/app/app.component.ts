@@ -16,7 +16,7 @@ import { heroCog8ToothSolid, heroChartBarSolid } from '@ng-icons/heroicons/solid
   styleUrl: './app.component.scss',
   viewProviders: [provideIcons({ heroCog8ToothSolid, heroChartBarSolid })]
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   @ViewChild("inputWord") inputWord!: ElementRef
   @ViewChild("tip1") tip1!: ElementRef
   @ViewChild("tip2") tip2!: ElementRef
@@ -24,20 +24,16 @@ export class AppComponent {
   @ViewChild("tip4") tip4!: ElementRef
   @ViewChild("tip5") tip5!: ElementRef
 
-  @ViewChild("image1") image1!: ElementRef
-  @ViewChild("image2") image2!: ElementRef
-  @ViewChild("image3") image3!: ElementRef
-  @ViewChild("image4") image4!: ElementRef
-  @ViewChild("image5") image5!: ElementRef
+  @ViewChild("image") image!: ElementRef
 
   title = 'ilustra';
   value = "";
-
-  tips = [this.tip1, this.tip2, this.tip3, this.tip4, this.tip5]
-  images = [this.image1, this.image2, this.image3, this.image4, this.image5]
+  tips: ElementRef[] = []
 
   currentTip = 0;
-
+ngAfterViewInit(){
+  this.tips = [this.tip1, this.tip2, this.tip3, this.tip4, this.tip5]
+}
   inputKey(key: string) {
     this.inputWord.nativeElement.focus()
     if(key == "{enter}"){
@@ -55,18 +51,26 @@ export class AppComponent {
 
 validateInput(input: string){
   console.log(input)
-if (input.toUpperCase() == "GELO"){
+if (input.toUpperCase() == "TUCANO"){
   this.tips[this.currentTip].nativeElement.classList.add("correctTip")
+  this.updateImage()
   this.currentTip++
-  this.images[this.currentTip].nativeElement.hidden = false
   this.value = ""
   return
 }
+console.log(this.currentTip)
+this.updateImage()
+this.value = ""
 this.tips[this.currentTip].nativeElement.classList.add("incorrectTip")
-this.images[this.currentTip].nativeElement.hidden = false
+this.image.nativeElement.hidden = false
 this.currentTip++
 
 
+}
+
+updateImage(){
+  this.image.nativeElement.src = `/assets/img1/img${this.currentTip}.png`
+  this.image.nativeElement.hidden = false
 }
 
   onFocus(event: FocusEvent) {
