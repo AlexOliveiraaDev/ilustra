@@ -85,9 +85,5 @@ finishGame(){
     event.preventDefault();
   }
 
-  closeTutorial() {
-    this.showTutorial = false;
-  }
-
 }
 

@@ -81,11 +81,6 @@ ng-icon {
 
 @media (max-width: 768px) {
   .keyboard {
-    transform: scale(1.2);
-  }
-}
-@media (max-width: 368px) {
-  .keyboard {
     transform: scaleY(1.0);
   }
   .key{
@@ -102,3 +97,8 @@ ng-icon {
   }
 }
 
+@media (max-width: 330px) {
+  .keyboard {
+    transform: scale(0.9);
+  }
+}
