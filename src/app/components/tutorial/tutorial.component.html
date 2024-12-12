@@ -1,0 +1,43 @@
+<button class="closeButton" (click)="closeTutorial()">X</button>
+<div class="helpDiv">
+  <p>O objetivo do jogo é adivinhar a palavra correta baseada na imagem.</p>
+  <p>A cada tentativa, a imagem vai sendo revelada aos poucos.</p>
+  <p>Você tem 5 tentativas para adivinhar a palavra. Cada vez que você erra, uma parte da imagem é revelada em forma de silhueta. Na quinta tentativa errada, a imagem inteira é revelada.</p>
+
+  <!-- Exemplo de tentativa 1 -->
+  <div class="example">
+    <input type="text" value="PALAVRA" readonly>
+    <div class="image">
+      <img src="/assets/img1/img0.png" alt="Imagem do progresso" class="image-overlay">
+    </div>
+  </div>
+  <p>A palavra deve ser digitada no campo de entrada. A cada tentativa incorreta, a imagem será revelada um pouco.</p>
+
+  <!-- Exemplo de tentativa 2 -->
+  <div class="example">
+    <input type="text" value="TENTATIVA 1" readonly>
+    <div class="image">
+      <img src="/assets/img1/img1.png" alt="Imagem do progresso" class="image-overlay">
+    </div>
+  </div>
+  <p>A cada nova tentativa, mais da imagem será revelada.</p>
+
+  <!-- Exemplo de tentativa 3 -->
+  <div class="example">
+    <input type="text" value="TENTATIVA 2" readonly>
+    <div class="image">
+      <img src="/assets/img1/img2.png" alt="Imagem do progresso" class="image-overlay">
+    </div>
+  </div>
+
+  <p>Se você acertar a palavra antes de usar todas as tentativas, o jogo acaba e a imagem correta será revelada.</p>
+
+  <!-- Exemplo de tentativa final -->
+  <div class="example">
+    <input type="text" value="TENTATIVA FINAL" readonly>
+    <div class="image">
+      <img src="/assets/img1/img4.png" alt="Imagem final" class="image-overlay">
+    </div>
+  </div>
+
+  <p>A palavra muda todo dia, então você sempre terá um novo desafio!</p>

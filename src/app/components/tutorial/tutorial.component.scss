@@ -1,0 +1,84 @@
+// Definição das variáveis de cores
+$color-white: white;
+$color-border: #B6B4AD;
+$color-text: #3b3437;
+$color-tips: #87847b;
+$color-correct: #3aa394;
+$color-incorrect: #AC3C3C;
+$border-radius: 6px;
+$max-width: 300px;
+$border-width: 3px;
+
+.helpDiv {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+}
+
+.example {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image {
+  flex-grow: 1;
+  aspect-ratio: 1 / 1;
+  width: 80%;
+  max-height: 250px;
+  background-color: $color-white;
+  border-color: $color-border;
+  border-width: $border-width;
+  border-style: solid;
+  border-radius: $border-radius;
+  margin-top: 10px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-white;
+  border-color: $color-border;
+  border-width: $border-width;
+  border-style: solid;
+  border-radius: $border-radius;
+  font-size: 14px;
+  width: 80%;
+  height: 20px;
+  overflow: hidden;
+}
+
+
+p {
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  border: none;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+

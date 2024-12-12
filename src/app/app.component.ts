@@ -4,6 +4,8 @@ import { KeyboardComponent } from './components/keyboard/keyboard.component';
 import { FormsModule } from '@angular/forms';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { heroCog8ToothSolid, heroChartBarSolid } from '@ng-icons/heroicons/solid'
+import { TutorialComponent } from './components/tutorial/tutorial.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -11,12 +13,14 @@ import { heroCog8ToothSolid, heroChartBarSolid } from '@ng-icons/heroicons/solid
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, KeyboardComponent, FormsModule, NgIconComponent],
+  imports: [RouterOutlet, KeyboardComponent, FormsModule, NgIconComponent, TutorialComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   viewProviders: [provideIcons({ heroCog8ToothSolid, heroChartBarSolid })]
 })
 export class AppComponent implements AfterViewInit {
+
+  showTutorial = true;
   @ViewChild("inputWord") inputWord!: ElementRef
   @ViewChild("tip1") tip1!: ElementRef
   @ViewChild("tip2") tip2!: ElementRef
@@ -53,9 +57,8 @@ validateInput(input: string){
   console.log(input)
 if (input.toUpperCase() == "TUCANO"){
   this.tips[this.currentTip].nativeElement.classList.add("correctTip")
-  this.updateImage()
+  this.finishGame()
   this.currentTip++
-  this.value = ""
   return
 }
 console.log(this.currentTip)
@@ -64,8 +67,6 @@ this.value = ""
 this.tips[this.currentTip].nativeElement.classList.add("incorrectTip")
 this.image.nativeElement.hidden = false
 this.currentTip++
-
-
 }
 
 updateImage(){
@@ -73,8 +74,19 @@ updateImage(){
   this.image.nativeElement.hidden = false
 }
 
+finishGame(){
+  this.image.nativeElement.hidden = false
+  this.image.nativeElement.src = "/assets/img1/img4.png"
+  this.tips[this.currentTip].nativeElement.classList.add("correctTip")
+  this.value = ""
+}
+
   onFocus(event: FocusEvent) {
     event.preventDefault();
+  }
+
+  closeTutorial() {
+    this.showTutorial = false;
   }
 
 }
