@@ -12,6 +12,7 @@ export class TutorialComponent {
   constructor(private appComponent: AppComponent) {}
 
   closeTutorial() {
+    localStorage.setItem('showTutorial', 'false');
     this.appComponent.showTutorial = false;
   }
 }
