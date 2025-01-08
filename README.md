@@ -1,6 +1,24 @@
-# Ilustra
+<h1 align="center">
+    <img src="/public/assets/logo.png">
+</h1>
+<p align="center">
+    <img src="/media/cover.jpg" alt="dashboard"/>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+  <p align="center">Ilustra is a <b>daily word-guessing game</b> where you uncover a word by watching a picture slowly reveal itself. You have five attempts to guess correctly, with the image gradually becoming clearer after each wrong guess. The word changes every day, offering a fresh challenge for everyone, everywhere."</p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"></img>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></img>
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"></img>
+<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"></img>
+</p>
+
+<p align="center">
+This project was generated with version 18.2.10.
+</p>
+
+
 
 ## Development server
 
