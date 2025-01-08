@@ -4,6 +4,7 @@
 
 <p align="center">
     <img src="./media/cover.jpg" alt="Dashboard preview">
+    <img src="https://img.shields.io/badge/In%20Development-orange?style=for-the-badge" alt="In Development Badge">
 </p>
 
 <p align="center">
@@ -11,6 +12,7 @@
     You have five attempts to guess correctly, with the image becoming progressively clearer after each wrong guess. 
     A new word is introduced every day, offering a fresh challenge for players everywhere!
 </p>
+
 
 ---
 
